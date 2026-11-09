@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Multi MOD一覧</title>
+<meta name="description" content="MC Multi サーバーで使っているMODの一覧（Minecraft 1.21.1 / NeoForge）">
+<link rel="icon" href="icons/tf.png">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1f3a2c; --paper: #fdfbf5; --ink: #2b2b2b; --line: #ddd5c5; --card: #fff;
+    --green: #2a6b42; --muted: #555; --sub: #4f6b5a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 500; color: var(--ink);
+    background: var(--bg);
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,.04) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.04) 75%),
+      linear-gradient(45deg, rgba(255,255,255,.04) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.04) 75%);
+    background-size: 40px 40px; background-position: 0 0, 20px 20px;
+    padding: 24px 16px 40px;
+  }
+  .page { max-width: 960px; margin: 0 auto; background: var(--paper); border: 5px solid #13261c; border-radius: 18px; padding: 28px clamp(16px, 4vw, 40px); }
+  header { text-align: center; margin-bottom: 20px; }
+  .tag { display: inline-block; font-family: "DotGothic16"; background: var(--green); color: #fff; font-size: 18px; padding: 3px 14px; border-radius: 6px; }
+  h1 { font-family: "DotGothic16"; font-size: clamp(32px, 7vw, 52px); color: var(--bg); margin-top: 8px; line-height: 1.15; }
+  .sub { font-size: 16px; color: var(--sub); margin-top: 4px; }
+
+  nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 16px 0 4px; }
+  nav a { font-size: 15px; font-weight: 800; color: var(--green); background: #fff; border: 2px solid var(--green); border-radius: 16px; padding: 3px 12px; text-decoration: none; }
+  nav a:hover { background: var(--green); color: #fff; }
+
+  a.mod, a.hero { color: inherit; text-decoration: none; }
+  .hero { display: flex; gap: 18px; align-items: center; background: linear-gradient(135deg,#e6f3ea,#f4efe0); border: 4px solid var(--green); border-radius: 16px; padding: 16px 20px; }
+  .hero img { flex: none; width: 88px; height: 88px; border-radius: 12px; image-rendering: pixelated; }
+  .hero .name { font-size: 26px; font-weight: 800; color: var(--green); }
+  .hero .name span { font-size: 16px; color: #666; font-weight: 500; margin-left: 6px; }
+  .hero p { font-size: 16px; color: #444; line-height: 1.5; }
+
+  h2 { font-family: "DotGothic16"; font-size: 24px; margin: 26px 0 10px; display: flex; align-items: center; gap: 10px; scroll-margin-top: 12px; }
+  h2::after { content: ""; flex: 1; height: 3px; background: currentColor; opacity: .25; border-radius: 2px; }
+  .s1 { color: #2a6b42; } .s2 { color: #23628f; } .s3 { color: #b0452e; } .s4 { color: #6b4fa0; } .s5 { color: #777; } .s6 { color: #8a5a1f; } .s7 { color: #2f7d7a; }
+  .mod.wide { grid-column: 1 / -1; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+  .mod { background: var(--card); border: 3px solid var(--line); border-radius: 12px; padding: 10px 12px; display: flex; gap: 12px; align-items: center; transition: border-color .15s, transform .15s; }
+  a.mod:hover, a.hero:hover { border-color: var(--green); transform: translateY(-2px); }
+  .mod img { flex: none; width: 56px; height: 56px; border-radius: 10px; image-rendering: pixelated; object-fit: cover; background: #f0f0f0; }
+  .mod .n { font-size: 17px; font-weight: 800; color: var(--bg); line-height: 1.25; }
+  .mod .d { font-size: 14px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+
+  .req { margin-top: 24px; background: #f4f1ea; border: 3px dashed #c9bfa9; border-radius: 12px; padding: 12px 16px; font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .req b { color: var(--bg); }
+  .req a { color: var(--green); }
+
+  .portal img { width: 100%; max-width: 540px; display: block; margin: 0 auto; border-radius: 12px; border: 3px solid var(--line); }
+  .portal p { text-align: center; font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+  footer { margin-top: 28px; font-size: 14px; color: #777; text-align: center; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="tag">MC Multi パック v1.3.0</div>
+    <h1>入っているMOD（41個）</h1>
+    <p class="sub">Minecraft 1.21.1 ／ NeoForge</p>
+    <nav>
+      <a href="#twilight">黄昏の森</a>
+      <a href="#dims">ディメンション</a>
+      <a href="#dungeon">ダンジョン</a>
+      <a href="#colony">村づくり</a>
+      <a href="#comfort">快適</a>
+      <a href="#multi">マルチ向け</a>
+      <a href="#perf">軽量化</a>
+      <a href="#portal">森への入り方</a>
+    </nav>
+  </header>
+
+  <a class="hero" href="https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest" target="_blank" rel="noopener">
+    <img src="icons/tf.png" alt="">
+    <div>
+      <div class="name">Twilight Forest<span>黄昏の森</span></div>
+      <p>ずっと夕暮れの魔法の森。ボスを順番に倒して進む冒険MOD。このサーバーのメイン</p>
+    </div>
+  </a>
+
+  <h2 class="s1" id="twilight">黄昏の森をもっと楽しく</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/twilight-forest-dungeons-villages" target="_blank" rel="noopener"><img src="icons/the-twilight-forest-dungeons-villages.webp" alt=""><div><div class="n">TF Dungeons &amp; Villages</div><div class="d">森に村と地下ダンジョンが増える</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/twilights-flavors-delight" target="_blank" rel="noopener"><img src="icons/twilight-delight.png" alt=""><div><div class="n">Twilight's Flavors &amp; Delight</div><div class="d">森の素材で料理が作れる</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight" target="_blank" rel="noopener"><img src="icons/farmers-delight.png" alt=""><div><div class="n">Farmer's Delight</div><div class="d">畑と料理が増える。鍋・まな板・新しい作物</div></div></a>
+  </div>
+
+  <h2 class="s4" id="dims">ほかのディメンション</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/aether" target="_blank" rel="noopener"><img src="icons/aether.webp" alt=""><div><div class="n">The Aether</div><div class="d">空に浮かぶ島の世界。グロウストーンで囲んで水で開く</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/deeperdarker" target="_blank" rel="noopener"><img src="icons/dd.webp" alt=""><div><div class="n">Deeper and Darker</div><div class="d">ディープダークの奥にある別世界。強めの上級者向け</div></div></a>
+  </div>
+
+  <h2 class="s6" id="dungeon">ダンジョン・建物</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise" target="_blank" rel="noopener"><img src="icons/when-dungeons-arise.webp" alt=""><div><div class="n">When Dungeons Arise</div><div class="d">巨大な城・塔・空飛ぶ船などのダンジョンが出てくる。中には強い敵とお宝</div></div></a>
+    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons-neoforge" target="_blank" rel="noopener"><img src="icons/yungs-api.webp" alt=""><div><div class="n">YUNG's シリーズ（8個）</div><div class="d">地下ダンジョン・要塞・廃坑・砂漠とジャングルの神殿・海底神殿・ネザー要塞・エンドの島を、広くて探検しがいのある作りに変える</div></div></a>
+  </div>
+  <p class="note">新しいダンジョンは、まだ誰も行っていない場所にだけ出るよ</p>
+
+  <h2 class="s7" id="colony">村づくり</h2>
+  <div class="grid">
+    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/minecolonies" target="_blank" rel="noopener"><img src="icons/minecolonies.png" alt=""><div><div class="n">MineColonies</div><div class="d">住人を呼んで自分の町を作る。建物を建てると住人が働いて、木こり・農家・鉱夫などが資源を集めてくれる</div></div></a>
+  </div>
+
+  <h2 class="s2" id="comfort">冒険を快適に</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/jei" target="_blank" rel="noopener"><img src="icons/jei.webp" alt=""><div><div class="n">JEI</div><div class="d">アイテムの作り方を検索できる</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/jade" target="_blank" rel="noopener"><img src="icons/jade.webp" alt=""><div><div class="n">Jade</div><div class="d">見ているブロックやモブの名前・体力を表示</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/waystones" target="_blank" rel="noopener"><img src="icons/waystones.webp" alt=""><div><div class="n">Waystones</div><div class="d">ワープ石を置いた場所どうしを行き来できる</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks" target="_blank" rel="noopener"><img src="icons/sophisticated-backpacks.webp" alt=""><div><div class="n">Sophisticated Backpacks</div><div class="d">強化できるリュック。荷物が多くても安心</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/inventory-profiles-next" target="_blank" rel="noopener"><img src="icons/ipn.png" alt=""><div><div class="n">Inventory Profiles Next</div><div class="d">チェストや持ち物をボタン1つで整頓。壊れた道具の自動持ち替えも</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap" target="_blank" rel="noopener"><img src="icons/xaeros-minimap.webp" alt=""><div><div class="n">Xaero's Minimap</div><div class="d">画面の端にミニマップ。土地を保護した範囲も地図に出る</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map" target="_blank" rel="noopener"><img src="icons/xaeros-world-map.webp" alt=""><div><div class="n">Xaero's World Map</div><div class="d">M キーで大きい地図。行ったところが記録される</div></div></a>
+  </div>
+
+  <h2 class="s3" id="multi">マルチ向け</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/lootr" target="_blank" rel="noopener"><img src="icons/lootr.webp" alt=""><div><div class="n">Lootr</div><div class="d">宝箱の中身が人ごとに出る。取り合いにならない</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/open-parties-and-claims" target="_blank" rel="noopener"><img src="icons/open-parties-and-claims.png" alt=""><div><div class="n">Open Parties and Claims</div><div class="d">自分の土地を保護。パーティで共有もできる</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/gravestone-mod" target="_blank" rel="noopener"><img src="icons/gravestone-mod.webp" alt=""><div><div class="n">GraveStone Mod</div><div class="d">死んだ場所にお墓ができて、アイテムが消えない</div></div></a>
+  </div>
+
+  <h2 class="s5" id="perf">軽量化・そのほか</h2>
+  <div class="grid">
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/modernfix" target="_blank" rel="noopener"><img src="icons/modernfix.png" alt=""><div><div class="n">ModernFix</div><div class="d">起動を速く、動作を軽くする</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/ferritecore" target="_blank" rel="noopener"><img src="icons/ferritecore.jpeg" alt=""><div><div class="n">FerriteCore</div><div class="d">メモリの使用量を減らす</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/vanillabackport" target="_blank" rel="noopener"><img src="icons/vanilla-backport.png" alt=""><div><div class="n">Vanilla Backport</div><div class="d">前のワールドの新しいブロック（ペールオーク・銅のチェストなど）を使えるようにする</div></div></a>
+  </div>
+
+  <div class="req"><b>前提MOD：</b>
+    <a href="https://www.curseforge.com/minecraft/mc-mods/mezzconfig" target="_blank" rel="noopener">mezz config</a>（JEI用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/balm" target="_blank" rel="noopener">Balm</a>（Waystones用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-core" target="_blank" rel="noopener">Sophisticated Core</a>（リュック用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/owo-lib" target="_blank" rel="noopener">owo-lib</a>（Aether用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/platform" target="_blank" rel="noopener">Platform</a>（Vanilla Backport用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/libipn" target="_blank" rel="noopener">libIPN</a>・<a href="https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge" target="_blank" rel="noopener">Kotlin for Forge</a>（整頓用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/yungs-api-neoforge" target="_blank" rel="noopener">YUNG's API</a>（YUNG's用）／
+    <a href="https://www.curseforge.com/minecraft/mc-mods/structurize" target="_blank" rel="noopener">Structurize</a>・<a href="https://www.curseforge.com/minecraft/mc-mods/blockui" target="_blank" rel="noopener">BlockUI</a>・<a href="https://www.curseforge.com/minecraft/mc-mods/domum-ornamentum" target="_blank" rel="noopener">Domum Ornamentum</a>・<a href="https://www.curseforge.com/minecraft/mc-mods/multi-piston" target="_blank" rel="noopener">Multi-Piston</a>（MineColonies用）
+  </div>
+
+  <h2 class="s1" id="portal">黄昏の森への入り方</h2>
+  <div class="portal">
+    <a href="twilight-portal.png" target="_blank"><img src="twilight-portal.png" alt="黄昏の森のポータルの作り方" loading="lazy"></a>
+    <p>タップで大きく表示</p>
+  </div>
+
+  <footer>パックを入れれば全部自動で入るので、ひとつずつ入れる必要はないよ<br>MOD名を押すと CurseForge のページが開きます</footer>
+</div>
+</body>
+</html>

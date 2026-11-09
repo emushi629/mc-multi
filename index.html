@@ -30,6 +30,11 @@
 
   .dl { display: inline-block; margin-top: 16px; background: #e3533b; color: #fff; font-weight: 800; font-size: 18px; padding: 10px 22px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 0 #a8341f; }
   .dl:hover { transform: translateY(1px); box-shadow: 0 3px 0 #a8341f; }
+  .dls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .dl2 { background: var(--green); box-shadow: 0 4px 0 #18432a; }
+  .dl2:hover { box-shadow: 0 3px 0 #18432a; }
+  details.tip summary { cursor: pointer; font-size: 17px; font-weight: 800; color: var(--bg); }
+  details.tip[open] summary { margin-bottom: 6px; }
   .dlnote { font-size: 13px; color: var(--muted); margin-top: 8px; }
   nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 16px 0 4px; }
   nav a { font-size: 15px; font-weight: 800; color: var(--green); background: #fff; border: 2px solid var(--green); border-radius: 16px; padding: 3px 12px; text-decoration: none; }
@@ -88,12 +93,11 @@
     <div class="tag">MC Multi パック v1.3.1</div>
     <h1>入っているMOD（41個）</h1>
     <p class="sub">Minecraft 1.21.1 ／ NeoForge</p>
-    <a class="dl" href="MCMulti.zip" download>パックをダウンロード（v1.3.1・97KB）</a>
-    <p class="dlnote">CurseForge の My Modpacks → Import で読み込む</p>
-    <p class="dlnote">「files that aren't on CurseForge」と出たら、中身は日本語化パックなので安全。チェックを入れて <b>All Files</b></p>
-    <p class="dlnote">日本語化パック入り：初回だけ 設定 → リソースパック で「MC Multi 日本語化パック」を右へ移して完了</p>
-    <p class="dlnote">読み込むたびに MC Multi が増えるので、古い方は右クリック → 削除でOK（ワールドはサーバーにあるので消えない）</p>
-    <p class="dlnote">v1.3.0 を入れ済みの人は <a href="MCMulti-JP.zip" download>日本語化パックだけ</a> を resourcepacks フォルダへ</p>
+    <div class="dls">
+      <a class="dl" href="MCMulti.zip" download>はじめて：パックをダウンロード</a>
+      <a class="dl dl2" href="MCMulti-update.bat" download>入れ済み：更新ツール</a>
+    </div>
+    <p class="dlnote"><a href="#update">入れ方・更新のしかた</a></p>
     <nav>
       <a href="#twilight">黄昏の森</a>
       <a href="#dims">ディメンション</a>
@@ -104,7 +108,7 @@
       <a href="#perf">軽量化</a>
       <a href="#portal">森への入り方</a>
       <a href="#minimap">ミニマップ設定</a>
-      <a href="#update">更新のしかた</a>
+      <a href="#update">入れ方・更新</a>
     </nav>
     <p class="dlnote"><span class="new">NEW</span> は v1.3 で増えたMOD ／ <span class="bye">削除予定</span> は次の更新で外すMOD</p>
   </header>
@@ -205,38 +209,45 @@
     </div>
   </div>
 
-  <h2 class="s3" id="update">パックを新しくしたとき</h2>
+  <h2 class="s3" id="update">入れ方・更新のしかた</h2>
   <div class="tips">
-    <div class="tip wide">
-      <h3>かんたん更新（おすすめ）</h3>
+    <div class="tip">
+      <h3>はじめて入れる</h3>
       <ol>
-        <li><a class="dl" style="font-size:15px;padding:6px 14px;margin:4px 0" href="MCMulti-update.bat" download>更新ツールをダウンロード</a></li>
-        <li>ゲームを閉じて、ダウンロードした <b>MCMulti-update.bat</b> をダブルクリック</li>
+        <li><a href="MCMulti.zip" download>パック（MCMulti.zip）</a>をダウンロード</li>
+        <li>CurseForge の <span class="b">My Modpacks</span> → <span class="b">Import</span> で読み込む</li>
+        <li>警告が出たら、チェックを入れて <span class="b">All Files</span>（中身は日本語化パック）</li>
+        <li>起動したら <span class="b">設定</span> → <span class="b">リソースパック</span> で「MC Multi 日本語化パック」を右へ</li>
+      </ol>
+    </div>
+    <div class="tip">
+      <h3>更新する（入れ済みの人）</h3>
+      <ol>
+        <li><a href="MCMulti-update.bat" download>更新ツール（MCMulti-update.bat）</a>をダウンロード</li>
+        <li>ゲームを閉じて、ダブルクリック</li>
         <li>「完了！」と出たら、いつも通り Play</li>
       </ol>
-      <p class="en">今の MC Multi のまま、変わったMODだけダウンロードして最新にする。設定・ミニマップのマーク・日本語化パックはそのまま。ツールは1回保存すれば次の更新でも使える<br>
-      ダウンロード時にブラウザが警告したら「保存」、「WindowsによってPCが保護されました」と出たら「詳細情報」→「実行」<br>
-      MC Multi が2つ以上あるときは、いつも遊んでいる方の番号を選ぶ</p>
+      <p class="en">設定・ミニマップのマークはそのまま。Windows の警告は「詳細情報」→「実行」。MC Multi が2つあるときは、いつも遊んでいる方の番号を選ぶ</p>
     </div>
-    <div class="tip wide">
-      <h3>ツールを使わない場合：設定を新しい MC Multi に引き継ぐ</h3>
+    <details class="tip wide">
+      <summary>ツールを使わずに更新する</summary>
       <ol>
-        <li>新しい zip を読み込む（MC Multi がもう1つ増える）</li>
-        <li><b>古い方</b>と<b>新しい方</b>を、それぞれ右クリック → <span class="b">フォルダを開く</span></li>
+        <li>新しいパックを読み込む（MC Multi がもう1つ増える）</li>
+        <li>古い方と新しい方を、それぞれ右クリック → <span class="b">フォルダを開く</span></li>
         <li>古い方から新しい方へ、下のものをコピー（置き換える）</li>
       </ol>
       <table>
         <tr><td>options.txt</td><td>キー設定・音量・画面などのゲーム設定</td></tr>
         <tr><td>servers.dat</td><td>サーバーリスト</td></tr>
         <tr><td>xaero フォルダ</td><td>ミニマップのマークと地図の記録</td></tr>
-        <tr><td>config の中の xaero～</td><td>ミニマップの表示設定（北固定など）。config フォルダ丸ごとは上書きしない</td></tr>
+        <tr><td>config の中の xaero～</td><td>ミニマップの表示設定。config フォルダ丸ごとは上書きしない</td></tr>
         <tr><td>screenshots</td><td>スクショ（いるなら）</td></tr>
       </table>
       <ol start="4">
-        <li>新しい方で起動 → <span class="b">設定</span> → <span class="b">リソースパック</span> で「MC Multi 日本語化パック」を右へ（options.txt を写すとオフに戻るため）</li>
-        <li>設定が戻っていたら、古い方を右クリック → 削除（ワールドはサーバーにあるので消えない）</li>
+        <li>新しい方で起動 → 日本語化パックをもう一度右へ</li>
+        <li>古い方を右クリック → 削除（ワールドはサーバーにあるので消えない）</li>
       </ol>
-    </div>
+    </details>
   </div>
 
   <footer>パックを入れれば全部自動で入るので、ひとつずつ入れる必要はないよ<br>MOD名を押すと CurseForge のページが開きます</footer>

@@ -62,6 +62,13 @@
   .portal img { width: 100%; max-width: 540px; display: block; margin: 0 auto; border-radius: 12px; border: 3px solid var(--line); }
   .portal p { text-align: center; font-size: 14px; color: var(--muted); margin-top: 6px; }
 
+  .tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+  .tip { background: var(--card); border: 3px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .tip h3 { font-size: 17px; font-weight: 800; color: var(--bg); margin-bottom: 6px; }
+  .tip ol { padding-left: 1.4em; font-size: 15px; line-height: 1.8; color: #444; }
+  .tip .en { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+  kbd, .b { display: inline-block; font-family: "DotGothic16"; font-size: 14px; background: #6f6f6f; color: #fff; border: 2px solid #2b2b2b; border-radius: 3px; padding: 0 6px; line-height: 1.5; }
+
   footer { margin-top: 28px; font-size: 14px; color: #777; text-align: center; line-height: 1.7; }
 </style>
 </head>
@@ -84,6 +91,7 @@
       <a href="#multi">マルチ向け</a>
       <a href="#perf">軽量化</a>
       <a href="#portal">森への入り方</a>
+      <a href="#minimap">ミニマップ設定</a>
     </nav>
   </header>
 
@@ -160,6 +168,27 @@
   <div class="portal">
     <a href="twilight-portal.png" target="_blank"><img src="twilight-portal.png" alt="黄昏の森のポータルの作り方" loading="lazy"></a>
     <p>タップで大きく表示</p>
+  </div>
+
+  <h2 class="s2" id="minimap">ミニマップの設定</h2>
+  <div class="tips">
+    <div class="tip">
+      <h3>北を上に固定する</h3>
+      <ol>
+        <li><kbd>Y</kbd> で「ミニマップの設定」を開く</li>
+        <li>右上の検索欄に <b>north</b> と入れる</li>
+        <li><span class="b">北を上に固定</span> を ON</li>
+      </ol>
+    </div>
+    <div class="tip">
+      <h3>転送ポイントのマークを消す</h3>
+      <ol>
+        <li><kbd>Y</kbd> で「ミニマップの設定」を開く</li>
+        <li>右上の検索欄に <b>waystone</b> と入れる</li>
+        <li><span class="b">見つけた転送ポイントを表示</span> と <span class="b">ほかの転送ポイントを表示</span> を OFF</li>
+      </ol>
+      <p class="en">英語で出るときは Discovered / Other Waystone Waypoints。1つだけ消すなら <kbd>U</kbd> の一覧から選んで削除</p>
+    </div>
   </div>
 
   <footer>パックを入れれば全部自動で入るので、ひとつずつ入れる必要はないよ<br>MOD名を押すと CurseForge のページが開きます</footer>

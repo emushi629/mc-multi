@@ -62,6 +62,11 @@
   .portal img { width: 100%; max-width: 540px; display: block; margin: 0 auto; border-radius: 12px; border: 3px solid var(--line); }
   .portal p { text-align: center; font-size: 14px; color: var(--muted); margin-top: 6px; }
 
+  .new, .bye { display: inline-block; font-family: "DotGothic16"; font-size: 12px; font-weight: 500; color: #fff; border-radius: 4px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; line-height: 1.6; }
+  .new { background: #e3533b; }
+  .bye { background: #888; }
+  .mod.leaving { opacity: .6; border-style: dashed; }
+
   .tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
   .tip { background: var(--card); border: 3px solid var(--line); border-radius: 12px; padding: 12px 14px; }
   .tip h3 { font-size: 17px; font-weight: 800; color: var(--bg); margin-bottom: 6px; }
@@ -93,6 +98,7 @@
       <a href="#portal">森への入り方</a>
       <a href="#minimap">ミニマップ設定</a>
     </nav>
+    <p class="dlnote"><span class="new">NEW</span> は v1.3 で増えたMOD ／ <span class="bye">削除予定</span> は次の更新で外すMOD</p>
   </header>
 
   <a class="hero" href="https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest" target="_blank" rel="noopener">
@@ -118,14 +124,14 @@
 
   <h2 class="s6" id="dungeon">ダンジョン・建物</h2>
   <div class="grid">
-    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise" target="_blank" rel="noopener"><img src="icons/when-dungeons-arise.webp" alt=""><div><div class="n">When Dungeons Arise</div><div class="d">巨大な城・塔・空飛ぶ船などのダンジョンが出てくる。中には強い敵とお宝</div></div></a>
-    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons-neoforge" target="_blank" rel="noopener"><img src="icons/yungs-api.webp" alt=""><div><div class="n">YUNG's シリーズ（8個）</div><div class="d">地下ダンジョン・要塞・廃坑・砂漠とジャングルの神殿・海底神殿・ネザー要塞・エンドの島を、広くて探検しがいのある作りに変える</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise" target="_blank" rel="noopener"><img src="icons/when-dungeons-arise.webp" alt=""><div><div class="n">When Dungeons Arise<span class="new">NEW</span></div><div class="d">巨大な城・塔・空飛ぶ船などのダンジョンが出てくる。中には強い敵とお宝</div></div></a>
+    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons-neoforge" target="_blank" rel="noopener"><img src="icons/yungs-api.webp" alt=""><div><div class="n">YUNG's シリーズ（8個）<span class="new">NEW</span></div><div class="d">地下ダンジョン・要塞・廃坑・砂漠とジャングルの神殿・海底神殿・ネザー要塞・エンドの島を、広くて探検しがいのある作りに変える</div></div></a>
   </div>
   <p class="note">新しいダンジョンは、まだ誰も行っていない場所にだけ出るよ</p>
 
   <h2 class="s7" id="colony">村づくり</h2>
   <div class="grid">
-    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/minecolonies" target="_blank" rel="noopener"><img src="icons/minecolonies.png" alt=""><div><div class="n">MineColonies</div><div class="d">住人を呼んで自分の町を作る。建物を建てると住人が働いて、木こり・農家・鉱夫などが資源を集めてくれる</div></div></a>
+    <a class="mod wide" href="https://www.curseforge.com/minecraft/mc-mods/minecolonies" target="_blank" rel="noopener"><img src="icons/minecolonies.png" alt=""><div><div class="n">MineColonies<span class="new">NEW</span></div><div class="d">住人を呼んで自分の町を作る。建物を建てると住人が働いて、木こり・農家・鉱夫などが資源を集めてくれる</div></div></a>
   </div>
 
   <h2 class="s2" id="comfort">冒険を快適に</h2>
@@ -135,14 +141,14 @@
     <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/waystones" target="_blank" rel="noopener"><img src="icons/waystones.webp" alt=""><div><div class="n">Waystones</div><div class="d">ワープ石を置いた場所どうしを行き来できる</div></div></a>
     <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks" target="_blank" rel="noopener"><img src="icons/sophisticated-backpacks.webp" alt=""><div><div class="n">Sophisticated Backpacks</div><div class="d">強化できるリュック。荷物が多くても安心</div></div></a>
     <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/inventory-profiles-next" target="_blank" rel="noopener"><img src="icons/ipn.png" alt=""><div><div class="n">Inventory Profiles Next</div><div class="d">チェストや持ち物をボタン1つで整頓。壊れた道具の自動持ち替えも</div></div></a>
-    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap" target="_blank" rel="noopener"><img src="icons/xaeros-minimap.webp" alt=""><div><div class="n">Xaero's Minimap</div><div class="d">画面の端にミニマップ。土地を保護した範囲も地図に出る</div></div></a>
-    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map" target="_blank" rel="noopener"><img src="icons/xaeros-world-map.webp" alt=""><div><div class="n">Xaero's World Map</div><div class="d">M キーで大きい地図。行ったところが記録される</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap" target="_blank" rel="noopener"><img src="icons/xaeros-minimap.webp" alt=""><div><div class="n">Xaero's Minimap<span class="new">NEW</span></div><div class="d">画面の端にミニマップ。土地を保護した範囲も地図に出る</div></div></a>
+    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map" target="_blank" rel="noopener"><img src="icons/xaeros-world-map.webp" alt=""><div><div class="n">Xaero's World Map<span class="new">NEW</span></div><div class="d">M キーで大きい地図。行ったところが記録される</div></div></a>
   </div>
 
   <h2 class="s3" id="multi">マルチ向け</h2>
   <div class="grid">
     <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/lootr" target="_blank" rel="noopener"><img src="icons/lootr.webp" alt=""><div><div class="n">Lootr</div><div class="d">宝箱の中身が人ごとに出る。取り合いにならない</div></div></a>
-    <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/open-parties-and-claims" target="_blank" rel="noopener"><img src="icons/open-parties-and-claims.png" alt=""><div><div class="n">Open Parties and Claims</div><div class="d">自分の土地を保護。パーティで共有もできる</div></div></a>
+    <a class="mod leaving" href="https://www.curseforge.com/minecraft/mc-mods/open-parties-and-claims" target="_blank" rel="noopener"><img src="icons/open-parties-and-claims.png" alt=""><div><div class="n">Open Parties and Claims<span class="bye">削除予定</span></div><div class="d">自分の土地を保護。パーティで共有もできる</div></div></a>
     <a class="mod" href="https://www.curseforge.com/minecraft/mc-mods/gravestone-mod" target="_blank" rel="noopener"><img src="icons/gravestone-mod.webp" alt=""><div><div class="n">GraveStone Mod</div><div class="d">死んだ場所にお墓ができて、アイテムが消えない</div></div></a>
   </div>
 

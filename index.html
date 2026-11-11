@@ -83,6 +83,9 @@
   .tip td { border-top: 1px solid var(--line); padding: 5px 4px; vertical-align: top; color: #444; }
   .tip td:first-child { font-family: monospace; font-size: 13px; color: var(--bg); white-space: nowrap; }
   .tip.wide { grid-column: 1 / -1; }
+  .gloss { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0 16px; margin-top: 6px; }
+  .gloss div { border-top: 1px solid var(--line); padding: 4px 2px; font-size: 14px; color: #444; }
+  .gloss code { font-size: 13px; color: var(--bg); margin-right: 8px; }
 
   footer { margin-top: 28px; font-size: 14px; color: #777; text-align: center; line-height: 1.7; }
 </style>
@@ -233,6 +236,150 @@
       </ol>
       <p class="en">アップグレード（石切台など）を開いて画面外にはみ出したり、右のレシピ一覧と重なったりするのが直る</p>
     </div>
+    <details class="tip wide" id="colony-words">
+      <summary>MineColonies 建築ツールの英語と日本語の対訳</summary>
+      <p class="en">建築ツールのボタン名はフォルダ名がそのまま出るので日本語にできない。よく使う大きな分類から</p>
+      <div class="gloss">
+        <div><code>Agriculture</code>農業（農家・羊飼いなど）</div>
+        <div><code>Craftsmanship</code>工芸（職人の小屋）</div>
+        <div><code>Decorations</code>飾り</div>
+        <div><code>Education</code>教育（学校・図書館）</div>
+        <div><code>Fundamentals</code>基本（市庁舎・家・倉庫など）</div>
+        <div><code>Infrastructure</code>インフラ（道・橋・鉄道など）</div>
+        <div><code>Military</code>軍事（兵舎・見張り塔）</div>
+        <div><code>Mystic</code>神秘（教会・墓地など）</div>
+        <div><code>Walls</code>壁</div>
+        <div><code>Roads</code>道</div>
+        <div><code>Fields</code>畑</div>
+        <div><code>Storage</code>倉庫</div>
+        <div><code>Luxury</code>ぜいたく品</div>
+        <div><code>Husbandry</code>畜産（牛・豚・鶏など）</div>
+        <div><code>Horticulture</code>園芸（花・植物）</div>
+        <div><code>Metallurgy</code>金属加工（鍛冶・精錬）</div>
+        <div><code>Masonry</code>石工（石切り・れんが）</div>
+        <div><code>Carpentry</code>木工（木こり・製材）</div>
+        <div><code>Supplies</code>物資（建設用キャンプ・船）</div>
+        <div><code>Mineshafts</code>鉱山の坑道</div>
+        <div><code>Rails</code>線路</div>
+        <div><code>Harbor</code>港</div>
+        <div><code>Misc</code>その他</div>
+      </div>
+      <p class="en" style="margin-top:12px">その下の細かい分類（ABC順）</p>
+      <div class="gloss">
+        <div><code>Adapters</code>つなぎ</div>
+        <div><code>Advanced</code>上級</div>
+        <div><code>Agora</code>広場（古代ギリシャ風）</div>
+        <div><code>Alley / Alleys</code>路地</div>
+        <div><code>Alternative</code>別デザイン</div>
+        <div><code>Aqueduct / Aquaducts</code>水道橋</div>
+        <div><code>Arches</code>アーチ</div>
+        <div><code>Athenian</code>アテネ風</div>
+        <div><code>Avenues</code>大通り</div>
+        <div><code>Base</code>土台</div>
+        <div><code>Basic</code>基本</div>
+        <div><code>Beigestone</code>ベージュの石</div>
+        <div><code>Big_walls</code>大きな壁</div>
+        <div><code>Birail</code>2本線の線路</div>
+        <div><code>Blackstone</code>ブラックストーン</div>
+        <div><code>Boardwalk</code>板張りの遊歩道</div>
+        <div><code>Brick</code>れんが</div>
+        <div><code>Bridge / Bridges</code>橋</div>
+        <div><code>Brownstone</code>茶色い石</div>
+        <div><code>Canal / Canals</code>運河</div>
+        <div><code>City</code>都市</div>
+        <div><code>Clay</code>粘土</div>
+        <div><code>Cliffclimb</code>崖を登る道</div>
+        <div><code>Cobble</code>丸石</div>
+        <div><code>Connectors</code>接続部分</div>
+        <div><code>Connector_deco</code>接続部分の飾り</div>
+        <div><code>Corner / Corners</code>角</div>
+        <div><code>Crossroads</code>十字路</div>
+        <div><code>Deco / Decorative</code>飾り</div>
+        <div><code>Deep</code>深い</div>
+        <div><code>Deepslate</code>深層岩</div>
+        <div><code>Default</code>標準</div>
+        <div><code>Facades</code>建物の正面</div>
+        <div><code>Fancy</code>豪華</div>
+        <div><code>Farm</code>農場</div>
+        <div><code>Fences</code>柵</div>
+        <div><code>Fortress</code>要塞</div>
+        <div><code>Gardens</code>庭</div>
+        <div><code>Gate / Gates</code>門</div>
+        <div><code>Gatehouses</code>門番小屋</div>
+        <div><code>Grand_processional</code>大行進路</div>
+        <div><code>Halls</code>ホール</div>
+        <div><code>Housing</code>住宅</div>
+        <div><code>Inland</code>内陸</div>
+        <div><code>Intersections</code>交差点</div>
+        <div><code>Intersection_deco</code>交差点の飾り</div>
+        <div><code>Jetty</code>桟橋</div>
+        <div><code>Lampposts</code>街灯</div>
+        <div><code>Lanterns</code>灯籠・ランタン</div>
+        <div><code>Large_deco</code>大きな飾り</div>
+        <div><code>Lights</code>明かり</div>
+        <div><code>Markets</code>市場</div>
+        <div><code>Megahall / Megahalls</code>大ホール</div>
+        <div><code>Moat</code>堀</div>
+        <div><code>Monorail</code>モノレール</div>
+        <div><code>Mycanean</code>ミケーネ風</div>
+        <div><code>Narrow</code>細い</div>
+        <div><code>Nice</code>きれい</div>
+        <div><code>Oak</code>オーク</div>
+        <div><code>Original</code>元のデザイン</div>
+        <div><code>Other</code>その他</div>
+        <div><code>Overground</code>地上</div>
+        <div><code>Pagodas</code>塔（五重塔風）</div>
+        <div><code>Palisade</code>木の柵の防壁</div>
+        <div><code>Parks</code>公園</div>
+        <div><code>Path / Paths</code>小道</div>
+        <div><code>Piers</code>埠頭</div>
+        <div><code>Plain</code>シンプル</div>
+        <div><code>Planks</code>板材</div>
+        <div><code>Planning</code>区画の目印</div>
+        <div><code>Plantation</code>大農園</div>
+        <div><code>Platforms</code>足場・ホーム</div>
+        <div><code>Player_spaces</code>プレイヤー用</div>
+        <div><code>Playerhome / Playerhouse</code>プレイヤーの家</div>
+        <div><code>Plaza</code>広場</div>
+        <div><code>Poor</code>質素</div>
+        <div><code>Premium</code>高級</div>
+        <div><code>Quarry</code>採石場</div>
+        <div><code>Quarry_inserts</code>採石場の中身</div>
+        <div><code>Rail</code>線路</div>
+        <div><code>Retaining_wall</code>土留めの壁（段差の石垣）</div>
+        <div><code>Road</code>道</div>
+        <div><code>Rural</code>田舎</div>
+        <div><code>Seawall</code>防波堤</div>
+        <div><code>Segment</code>区間</div>
+        <div><code>Sewage</code>下水</div>
+        <div><code>Shallow</code>浅い</div>
+        <div><code>Ships</code>船</div>
+        <div><code>Shoal</code>浅瀬</div>
+        <div><code>Short</code>短い</div>
+        <div><code>Simple</code>シンプル</div>
+        <div><code>Small_deco</code>小さな飾り</div>
+        <div><code>Spartan</code>スパルタ風</div>
+        <div><code>Stairs</code>階段</div>
+        <div><code>Statues</code>像</div>
+        <div><code>Stone</code>石</div>
+        <div><code>Streets</code>通り</div>
+        <div><code>Structures</code>建造物</div>
+        <div><code>Sturdy</code>頑丈</div>
+        <div><code>Subway</code>地下鉄</div>
+        <div><code>Tall</code>高い</div>
+        <div><code>Tower</code>塔</div>
+        <div><code>Tunnel</code>トンネル</div>
+        <div><code>Tunnelexit</code>トンネルの出口</div>
+        <div><code>Urban</code>都会</div>
+        <div><code>Utility</code>設備</div>
+        <div><code>Vegetation</code>植物</div>
+        <div><code>Villager</code>村人</div>
+        <div><code>Wall</code>壁</div>
+        <div><code>Waterfront</code>水辺</div>
+        <div><code>Wide</code>広い</div>
+        <div><code>Wood</code>木</div>
+      </div>
+    </details>
   </div>
 
   <h2 class="s3" id="update">入れ方・更新のしかた</h2>
